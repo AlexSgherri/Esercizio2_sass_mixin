@@ -1,0 +1,56 @@
+$color-primary: red;
+$color-secondary: blue;
+$color-ternary: green;
+$padding-unit: 0.7rem;
+
+body{
+    font-size: 1rem;
+}
+
+@mixin col-bor-font($color, $color-border, $font) {
+  color: $color;
+  border: 1px solid $color-border;
+  font-size: $font;
+}
+
+div {
+  padding: $padding-unit;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid $color-primary;
+  h1 {
+    line-height: 1.6;
+    color: $color-ternary;
+    border-bottom: 2px solid $color-secondary;
+  }
+
+  section {
+    display: flex;
+    width: 100%;
+    p {
+      padding: 2 * $padding-unit $padding-unit;
+      text-align: center;
+    }
+    &:last-child {
+
+        article{
+            @include col-bor-font($color-ternary, $color-secondary, 1.5rem);
+            margin-top: $padding-unit;
+            flex-grow: 1;
+        }
+    }
+  }
+
+ article {
+
+    &:nth-child(odd) {
+    @include col-bor-font($color-secondary, $color-ternary, 1rem)
+      }
+      &:nth-child(even) {
+        @include col-bor-font($color-primary, $color-ternary, 1rem)
+          }
+  }
+
+}
