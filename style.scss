@@ -34,9 +34,9 @@ div {
       text-align: center;
     }
     &:last-child {
-
-        article{
-            @include col-bor-font($color-ternary, $color-secondary, 1.5rem);
+      font-size: 24px;
+      article{
+        @include col-bor-font($color-ternary, $color-secondary, 1.5rem);
             margin-top: $padding-unit;
             flex-grow: 1;
         }
